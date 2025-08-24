@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SÍTIO RECANTO FELIZ</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header>SÍTIO RECANTO FELIZ</header>
+
+  <!-- Carrossel -->
+  <div class="carousel">
+    <img src="img/1.png" class="active" alt="Sítio - imagem 1">
+    <img src="img/2.png" alt="Sítio - imagem 2">
+    <img src="img/3.png" alt="Sítio - imagem 3">
+    <img src="img/4.png" alt="Sítio - imagem 4">
+    <img src="img/5.png" alt="Sítio - imagem 5">
+    <img src="img/6.png" alt="Sítio - imagem 6">
+    <img src="img/7.png" alt="Sítio - imagem 7">
+    <img src="img/8.png" alt="Sítio - imagem 8">
+    <img src="img/9.png" alt="Sítio - imagem 9">
+    <img src="img/10.png" alt="Sítio - imagem 10">
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <!-- Informações -->
+  <div class="info">
+    <h2>Detalhes do Sítio</h2>
+    <ul>
+      <li>• Churrasqueira</li>
+      <li>• Fogão a lenha</li>
+      <li>• Fogueira</li>
+      <li>• Piscina</li>
+      <li>• 2 quartos com cama de casal</li>
+      <li>• 2 sofás-cama</li>
+      <li>• 1 banheiro</li>
+      <li>• Cozinha equipada</li>
+      <li>• Sala de estar/jantar</li>
+      <li>• Vaga para três carros</li>
+      <li>• Área de festa com mesas e cadeiras</li>
+    </ul>
+
+    <p class="descricao">
+      Venha desfrutar de momentos inesquecíveis em meio à natureza, com conforto e lazer para toda a família.  
+      Nosso espaço é perfeito para relaxar, comemorar e criar memórias especiais.
+    </p>
+  </div>
+
+  <!-- Localização -->
+  <div class="localizacao">
+    <h2>📍 Localização</h2>
+    <p>Itajaí - Bairro Brilhante II</p>
+  </div>
+
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/554799323752?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20Sítio%20Recanto%20Feliz." 
+     class="whatsapp-btn" target="_blank">
+    Fale Conosco no WhatsApp
+  </a>
+
+  <!-- Botão Facebook -->
+  <a href="https://www.facebook.com/profile.php?id=61576992771056" 
+     class="facebook-btn" target="_blank">
+    Nossa Página no Facebook
+  </a>
+
+  <!-- Script do carrossel -->
+  <script>
+    let index = 0;
+    const images = document.querySelectorAll(".carousel img");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+
+    function showImage(i) {
+      images.forEach(img => img.classList.remove("active"));
+      images[i].classList.add("active");
+    }
+
+    function showNextImage() {
+      index = (index + 1) % images.length;
+      showImage(index);
+    }
+
+    function showPrevImage() {
+      index = (index - 1 + images.length) % images.length;
+      showImage(index);
+    }
+
+    setInterval(showNextImage, 3000);
+    nextBtn.addEventListener("click", showNextImage);
+    prevBtn.addEventListener("click", showPrevImage);
+  </script>
+</body>
+</html>
